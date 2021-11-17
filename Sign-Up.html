@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="Sign-Up.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col" id="signupbox">
+                <div class="row">
+                    <div class="col text-center"><img src="signup.jpg" alt="" height="200px" width="200"></div>
+                </div>
+                <div class="row" style="font-size: 20px;">
+                    <div class="col text-center">
+                        <legend>Create Account</legend>
+                    </div>
+                </div>
+                <div class="row border supbox"> <span><img src="name.png" alt="" height="25px" id="userpic"><input
+                            type="text" size="40" placeholder="User Full Name" style="border: none; outline: none;"
+                            class="supinput" id="supfname"></span></div>
+                <div class="row border supbox"> <span><img src="username.png" alt="" height="25px" id="userpic"><input
+                            type="text" size="40" placeholder="Your Username" style="border: none; outline: none;"
+                            class="supinput" id="supuser"></span></div>
+                <div class="row border supbox"> <span><img src="email.png" alt="" height="25px" id="userpic"><input
+                            type="text" size="40" placeholder="Your Email Address" style="border: none; outline: none;"
+                            class="supinput" id="supemail"></span></div>
+                <div class="row border supbox"> <span><img src="password.png" alt="" height="25px"
+                            id="userpic"><input type="password" size="40" placeholder="Enter Password"
+                            style="border: none; outline: none;" class="supinput" id="suppassword"></span></div>
+                <div style="color: red; font-weight: bolder; margin-top: 5%;" class="text-center" hidden id="supalert">
+                    Please fill out all boxes
+                </div>
+                <div class="text-center" id="returntologin" hidden>Now that you have completed signing up please return
+                    to the login page.</div>
+                <div class="row" id="buttonrow"><button type="button" class="btn btn-info"
+                        onclick="signUp()">Register</button></div>
+                <div id="suprow" class="text-center">Already have an account? <a href="Login.html">Login</a></div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <script src="Links.js"></script>
+</body>
+</html>

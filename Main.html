@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="Main.css">
+    <style>
+        .page {
+            display: none;
+        }
+
+        .page-active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col">
+                    <h2>BookMarker</h2>
+                </div>
+                <div class="col" style="text-align: right;">
+                    <div class="row" style="text-align: right;">
+                        <p>Welcome: <span id="Userentered"></span></p>
+                    </div>
+                    <div class="row"><a href="#" onclick="logout()">Logout</a></div>
+                </div>
+                <hr id="line">
+            </div>
+            <div class="row text-center">
+                <div class="col-2"></div>
+                <div class="col" id="inputurlbox">
+                    <div class="row">
+                        <p style="font-size: xx-large;">Bookmark Your Favorite Sites</p>
+                    </div>
+                    <div class="row" style="margin-top: 3%; margin-bottom: 3%;">
+                        <span style="font-weight: bold;">Site Name</span>
+                        <br>
+                        <input type="text" placeholder="Website name" id="siteinputname">
+                    </div>
+                    <div class="row">
+                        <span style="font-weight: bold;">Site URL</span>
+                        <br>
+                        <input type="text" placeholder="Website URL" id="urlinputname">
+                    </div>
+                    <div class="row">
+                        <div><button type="button" class="btn btn-primary btn-lg" id="button"
+                                onclick="submitURL()">Submit</button></div>
+                    </div>
+                    <div style="color: red; font-weight: bolder; margin-top: 5%;" class="text-center" hidden
+                        id="urlalert">Please fill out all
+                        boxes
+                    </div>
+                    <div class="row" style="margin-top: 5%;">
+                        <div id="links" style="text-align: left;"></div>
+                        <ul id="urlpagination" class="pagination" style="margin-left: 30%;"></ul>
+                    </div>
+                    <div class="modal" tabindex="-1" id="editurlmodal" >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row" style="margin-top: 3%; margin-bottom: 3%;">
+                                        <span style="font-weight: bold;">Site Name</span>
+                                        <br>
+                                        <input type="text" placeholder="Website name" id="upsiteinputname">
+                                    </div>
+                                    <div class="row">
+                                        <span style="font-weight: bold;">Site URL</span>
+                                        <br>
+                                        <input type="text" placeholder="Website URL" id="upurlinputname">
+                                    </div>
+                                    <input type="hidden" id="itemtoupdate">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="updateurl()">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            let userlog = JSON.parse(localStorage.getItem("userlog")).name;
+            document.querySelector("#Userentered").innerHTML = userlog;
+            displayURLlist();
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"
+        integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
+        crossorigin="anonymous"></script>
+    <script src="Links.js"></script>
+</body>
+
+</html>

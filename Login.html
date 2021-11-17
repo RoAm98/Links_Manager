@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="Login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col loginbox">
+                <div class="row">
+                    <div class="col text-center" id="picbox">
+                        <img src="Links.png" alt="" srcset="" style="height: 200px; width: 200px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <fieldset>
+                            <legend>Manage your Links </legend>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row border" id="userbox">
+                    <span>
+                        <img src="Username.png" alt="" height="25px" id="userpic"><input type="text" size="40"
+                            placeholder="Your Username" style="border: none; outline: none;" class="userinput"
+                            id="loginusername">
+                    </span>
+                </div>
+                <div class="row border" id="passbox">
+                    <span>
+                        <img src="password.png" alt="" height="25px" id="userpic"><input type="password" size="40"
+                            placeholder="Your Password" style="border: none; outline: none;" class="userinput"
+                            id="loginpassword">
+                    </span>
+                </div>
+                <div style="color: red; font-weight: bolder; margin-top: 5%;" class="text-center" hidden
+                    id="loginalert">Please fill out all
+                    boxes
+                </div>
+                <div class="row" id="buttonrow"><button type="button" class="btn btn-info"
+                        onclick="logIn()">Login</button></div>
+                <hr>
+                <div id="suprow">New to Link Manager? <a href="Sign-Up.html">Sign Up</a></div>
+                <div class="row"></div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <script src="Links.js"></script>
+</body>
+
+</html>
