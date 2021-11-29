@@ -1,5 +1,7 @@
 body{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
+    background-image: url(linksBG.png);
+    
 }
 
 .loginbox{
@@ -9,6 +11,7 @@ body{
     padding-right: 2%;
     padding-bottom: 2%;
     box-shadow: 6px 5px 10px 2px #888888;
+    opacity: 100%;
 }
 
 #picbox{
